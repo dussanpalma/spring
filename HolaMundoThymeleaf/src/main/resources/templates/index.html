@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Inicio</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Inicio</h1>
+        <p th:text="${mensaje}"></p>
+        <p th:text="${saludo}"></p>
+        <br/>
+
+
+        <!-- Codigo para mostrar lista -->
+        <!-- Utilizamos div en caso de que la lista sea NULL (ESTE VACIA) -->
+        <div th:if="${personas != null and !personas.empty}">
+            <table border=""> 
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Telefono</th>
+                </tr> 
+
+
+                <tr th:each="persona : ${personas}">
+                    <td th:text="${persona.nombre}">Mostrar Nombre</td>  
+                    <td th:text="${persona.apellido}">Mostrar Apellido</td>
+                    <td th:text="${persona.email}">Mostrar Email</td>
+                    <td th:text="${persona.telefono}">Mostrar Telefono</td>
+
+                </tr>
+            </table>
+        </div>
+        <div th:if="${personas == null or personas.empty}">
+               La lista de personas esta vacia
+           </div>
+            
+            
+        <!-- 
+          //Codigo para mostar una sola persona      
+          Nombre: <span th:text="${persona.nombre}">Mostrar Nombre</span>
+          <br/>
+          Apellido: <span th:text="${persona.apellido}">Mostrar Apellido</span>
+          <br/>
+          Email: <span th:text="${persona.email}">Mostrar Email</span>
+          <br/>
+          Telefono: <span th:text="${persona.telefono}">Mostrar Telefono</span>  
+        -->
+
+
+
+    </body>
+</html>
