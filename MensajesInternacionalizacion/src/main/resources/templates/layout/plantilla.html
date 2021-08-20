@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>Plantinlla</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <header th:fragment="header">
+            <h1 th:text="#{plantilla.titulo}">Titulo</h1>
+        </header>
+        
+        <footer th:fragment="footer">            
+            
+            <p> [[#{plantilla.pie-pagina}]]
+           <a href="https://www.linkedin.com/in/dussanpalma" target="_blank">Linkedin Dussan Palma</a></p>
+            
+        </footer>
+
+    </body>
+</html>
